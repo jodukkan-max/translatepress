@@ -1,5 +1,7 @@
 = 1.0.0 =
 * Initial Dukkan release. Forked from TranslatePress 3.2.6 and rebranded under Dukkan.
+* Slim build: bundled only Arabic (ar) locale + ar/en_US flags; removed 42 locale packs, all .po/.mo sources, and Vue dev source. Requires WordPress 6.0+.
+* Added GitHub-only self-updater (suppresses WordPress.org update check).
 
 = 3.2.5 =
 * Added Elementor language switcher widget

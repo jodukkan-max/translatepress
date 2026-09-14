@@ -10,6 +10,17 @@ A Dukkan-maintained fork of [TranslatePress – Multilingual](https://translatep
 
 This fork keeps the full TranslatePress feature set (visual front-end translation, WooCommerce support, AI translation, gettext strings) but replaces the update channel. Updates come **only** from this repository — never from WordPress.org.
 
+## Slim build
+
+The plugin is deliberately slimmed down for distribution (~6 MB vs. the original ~27 MB):
+
+- **Translation packs:** only **Arabic (`ar`)** is bundled (plus the English source). All other 42 locale packs (`.po`/`.mo`/`.l10n.php`) are removed.
+- **Translation format:** ships `.l10n.php` only (requires WordPress 6.0+).
+- **Flags:** only the `ar` and `en_US` flags are bundled (SVG + PNG).
+- **Dev sources:** the `assets/src/` Vue source tree and all `.po` source files are removed.
+
+If you need another language, re-add its locale pack from the upstream TranslatePress release before building.
+
 ## How updates work
 
 The plugin ships with a self-updater (`includes/class-dukkan-updater.php`) that:

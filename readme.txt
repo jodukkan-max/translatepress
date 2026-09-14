@@ -2,7 +2,7 @@
 Contributors: dukkan
 Donate link: https://dukkanwoocommerce.com/
 Tags: translate, translation, multilingual, automatic translation, ai translation, front-end translation, google translate, language
-Requires at least: 3.1.0
+Requires at least: 6.0
 Tested up to: 7.0.2
 Requires PHP: 7.4
 Stable tag: 1.0.0
