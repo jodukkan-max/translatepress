@@ -52,6 +52,10 @@ if ( trp_enable_translatepress() ) {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ai-api-key.php';
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ai-api-key-check.php';
 
+	/* Dukkan self-updater: fetch updates from our GitHub repository only. */
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-dukkan-updater.php';
+	new Dukkan_TranslatePress_Updater( __FILE__, TRP_PLUGIN_VERSION );
+
 	/* make sure we execute our plugin before other plugins so the changes we make apply across the board */
 	add_action( 'plugins_loaded', 'trp_run_translatepress_hooks', 1 );
 }
