@@ -33,6 +33,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 if ( !defined('ABSPATH' ) )
     exit();
 
+define( 'TRP_PLUGIN_VERSION', '1.0.1' );
+
 
 function trp_enable_translatepress(){
 	$enable_translatepress = true;
