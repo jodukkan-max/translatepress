@@ -1,3 +1,7 @@
+= 1.0.3 =
+* Renamed plugin folder to "dukkan-translatepress" so it no longer collides with the WordPress.org slug.
+* Removed the GitHub self-updater and version.json; the plugin is now distributed manually with no update channel.
+
 = 1.0.2 =
 * Fixed a performance bug where TranslatePress database upgrade routines ran on every page load. The internal database version is now decoupled from the Dukkan release version.
 

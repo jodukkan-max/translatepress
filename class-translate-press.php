@@ -81,7 +81,7 @@ class TRP_Translate_Press{
         define( 'TRP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'TRP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
         define( 'TRP_PLUGIN_BASE', plugin_basename( __DIR__ . '/index.php' ) );
-        define( 'TRP_PLUGIN_SLUG', 'translatepress-multilingual' );
+        define( 'TRP_PLUGIN_SLUG', 'dukkan-translatepress' );
         if ( ! defined( 'TRP_PLUGIN_VERSION' ) ) {
             define( 'TRP_PLUGIN_VERSION', '3.2.6' );
         }

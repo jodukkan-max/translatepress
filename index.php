@@ -3,7 +3,7 @@
 Plugin Name: TranslatePress - Multilingual
 Plugin URI: https://translatepress.com/
 Description: Experience a better way of translating your WordPress site using a visual front-end translation editor, with full support for WooCommerce and site builders.
-Version: 1.0.2
+Version: 1.0.3
 Author: Dukkan
 Author URI: https://dukkanwoocommerce.com/
 Text Domain: translatepress-multilingual
@@ -34,7 +34,6 @@ if ( !defined('ABSPATH' ) )
     exit();
 
 define( 'TRP_PLUGIN_VERSION', '3.2.6' );
-define( 'DUKKAN_TRP_RELEASE_VERSION', '1.0.2' );
 
 
 function trp_enable_translatepress(){
@@ -54,10 +53,6 @@ if ( trp_enable_translatepress() ) {
 	require_once plugin_dir_path( __FILE__ ) . 'class-translate-press.php';
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ai-api-key.php';
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ai-api-key-check.php';
-
-	/* Dukkan self-updater: fetch updates from our GitHub repository only. */
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-dukkan-updater.php';
-	new Dukkan_TranslatePress_Updater( __FILE__, DUKKAN_TRP_RELEASE_VERSION );
 
 	/* make sure we execute our plugin before other plugins so the changes we make apply across the board */
 	add_action( 'plugins_loaded', 'trp_run_translatepress_hooks', 1 );
