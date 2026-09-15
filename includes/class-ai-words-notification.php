@@ -13,7 +13,7 @@ class TRP_AI_Words_Notification {
      */
     public static function get_default_threshold() {
         $tp_product_name = TRP_Translate_Press::set_tp_product_name_static();
-        if ( array_key_exists( 'translatepress-multilingual', $tp_product_name ) ) {
+        if ( array_key_exists( 'translatepress-multilingual', $tp_product_name ) || array_key_exists( 'dukkan-translatepress', $tp_product_name ) ) {
             return 200;
         }
         return 5000;
@@ -85,7 +85,7 @@ class TRP_AI_Words_Notification {
      */
     private function is_free_user() {
         $tp_product_name = TRP_Translate_Press::set_tp_product_name_static();
-        return array_key_exists( 'translatepress-multilingual', $tp_product_name );
+        return array_key_exists( 'translatepress-multilingual', $tp_product_name ) || array_key_exists( 'dukkan-translatepress', $tp_product_name );
     }
 
     /**

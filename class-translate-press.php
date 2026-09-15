@@ -249,6 +249,7 @@ class TRP_Translate_Press{
         // The order is important because we only match the last one.
         $trp_all_tp_product_names = array(
             "translatepress-multilingual"  => "TranslatePress",
+            "dukkan-translatepress"        => "TranslatePress",
             "translatepress-business"      => "TranslatePress Business",
             "translatepress-developer"     => "TranslatePress Developer",
             "translatepress-personal"      => "TranslatePress Personal",
