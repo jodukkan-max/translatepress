@@ -2,7 +2,7 @@
 
 A Dukkan-maintained fork of [TranslatePress – Multilingual](https://translatepress.com/), rebranded and updated **exclusively from our own GitHub repository**.
 
-- **Version:** 1.0.0
+- **Version:** 1.0.2
 - **Author:** Dukkan — https://dukkanwoocommerce.com
 - **License:** GPLv2 or later
 
@@ -16,7 +16,7 @@ The plugin is deliberately slimmed down for distribution (~6 MB vs. the original
 
 - **Translation packs:** only **Arabic (`ar`)** is bundled (plus the English source). All other 42 locale packs (`.po`/`.mo`/`.l10n.php`) are removed.
 - **Translation format:** ships `.l10n.php` only (requires WordPress 6.0+).
-- **Flags:** only the `ar` and `en_US` flags are bundled (SVG + PNG).
+- **Flags:** the 45 most important language flags are bundled (SVG + PNG).
 - **Dev sources:** the `assets/src/` Vue source tree and all `.po` source files are removed.
 
 If you need another language, re-add its locale pack from the upstream TranslatePress release before building.
@@ -36,10 +36,15 @@ No background cron, no silent installs — an update happens only when an admin 
 
 To publish `X.Y.Z`:
 
-1. **Bump the version in three places:**
+1. **Bump the Dukkan release version in three places:**
    - `index.php` → plugin header `Version: X.Y.Z`
-   - `class-translate-press.php` → `define( 'TRP_PLUGIN_VERSION', 'X.Y.Z' );`
+   - `index.php` → `define( 'DUKKAN_TRP_RELEASE_VERSION', 'X.Y.Z' );`
    - `readme.txt` → `Stable tag: X.Y.Z`
+
+   > **Do NOT change `TRP_PLUGIN_VERSION`.** It must stay at `3.2.6` (the upstream
+   > database schema version). It is used internally to gate database migrations;
+   > lowering it would re-run every upgrade routine on each page load. Only bump it
+   > if you intentionally add a new database migration.
 2. **Update `changelog.txt`** with a `= X.Y.Z =` entry.
 3. **Update `version.json`:**
    ```json
@@ -75,7 +80,7 @@ To publish `X.Y.Z`:
 
 Install the built `translatepress-multilingual.zip` as a normal WordPress plugin.
 
-> **Important:** if a site already runs the upstream Cozmoslabs build (currently `3.2.6`), do **not** try to "update" to this fork over it — `1.0.0` is lower than `3.2.6`, so WordPress would treat it as a downgrade. Replace the plugin folder / install fresh instead.
+> **Migrating from upstream:** if a site already runs the upstream Cozmoslabs build (currently `3.2.6`), it can safely install this fork over it — the internal `TRP_PLUGIN_VERSION` is kept at `3.2.6`, so no database migrations are re-triggered. Replace the plugin folder, then activate.
 
 ## Attribution
 

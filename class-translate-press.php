@@ -83,7 +83,7 @@ class TRP_Translate_Press{
         define( 'TRP_PLUGIN_BASE', plugin_basename( __DIR__ . '/index.php' ) );
         define( 'TRP_PLUGIN_SLUG', 'translatepress-multilingual' );
         if ( ! defined( 'TRP_PLUGIN_VERSION' ) ) {
-            define( 'TRP_PLUGIN_VERSION', '1.0.1' );
+            define( 'TRP_PLUGIN_VERSION', '3.2.6' );
         }
 
 	    wp_cache_add_non_persistent_groups(array('trp'));

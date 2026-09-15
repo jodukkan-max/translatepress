@@ -1,3 +1,6 @@
+= 1.0.2 =
+* Fixed a performance bug where TranslatePress database upgrade routines ran on every page load. The internal database version is now decoupled from the Dukkan release version.
+
 = 1.0.1 =
 * Restored language flags (SVG + PNG) and trimmed to the 45 most important languages.
 * Updated Dukkan self-updater version metadata.
